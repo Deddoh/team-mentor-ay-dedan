@@ -1,0 +1,129 @@
+<!-- navbar 
+    sidenav
+    main
+    footer
+-->
+<header>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <div fxLayout="row" fxLayoutAlign="flex-start center">
+                
+                <button mat-icon-button (click)="toggleSideBar()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                &nbsp;&nbsp;&nbsp;
+                <h1>iBursary</h1>
+            </div>
+            <div fxFlex fxLayout="row" fxLayoutAlign="flex-end center">
+                <ul fxLayout="row" fxLayoutGap="20px">
+               <!-- <li> <button mat-button color="primary">Apply</button> </li> -->
+               <li> <button mat-icon-button><mat-icon aria-hidden="false">home</mat-icon></button></li>
+               <li> <button mat-icon-button><mat-icon>help_outline</mat-icon></button></li>
+               <li>
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon>person_outline</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item [routerLink]="">
+                        <mat-icon>person_outline</mat-icon>
+                        Profile
+                    </button>
+                    <button mat-menu-item [routerLink]="">
+                        <mat-icon>exit_to_app</mat-icon>
+                        Sign out
+                    </button>
+                </mat-menu>
+            </li>
+                </ul>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</header>
+    <!-- sidenav -->
+    <mat-drawer-container>
+        <mat-drawer mode="side" [opened]="sideBarOpen">
+
+            <mat-nav-list>
+                <div>
+                <h4>Welcome, John</h4>
+                <h5>email@user.com</h5>
+            </div>
+            
+                <mat-divider></mat-divider>
+
+                <h2 matSubheader>Items</h2>
+                <a mat-list-item routerLinkActive="list-item-active" [routerLink]="['/']"><mat-icon>home</mat-icon>home</a>
+                <a mat-list-item routerLinkActive="list-item-active" ><mat-icon>person_outline</mat-icon>My account</a>
+                <a mat-list-item routerLinkActive="list-item-actve" routerLink="/new-application"><mat-icon>home</mat-icon>Applications</a>
+                <a mat-list-item routerLinkActive="list-item-active">Disputes</a>
+
+            </mat-nav-list>
+
+        </mat-drawer>
+   
+    <!-- main dashboard content -->
+    <mat-drawer-content fxLayout="column">
+        <section id="charts" class="space">
+            <div fxLayout="row" fxLayoutAlign="space-around" fxLayoutGap="20px">
+                
+                <mat-card fxFlex="50" style="background-color: blueviolet; color: white;" fxLayout="row" fxLayoutAlign="space-around center">
+                    <!-- <div fxLayout="row" fxLayoutAlign="space-around center"> -->
+                        <h1>New Application</h1>
+                        <button class="btn btn-outline-light" [routerLink]="['/new-application']">Apply</button>
+                    <!-- </div> -->
+                </mat-card>
+            
+                <mat-card fxFlex="50" style="background: rgb(39, 141, 209); color: white;">
+                    <div fxLayout="column" fxLayoutAlign="center center">
+                    <h1>Application Status: </h1>
+                    <h4>PENDING</h4>
+                    </div>
+                </mat-card>
+                
+            </div>
+        </section>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <section class="space">
+            <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+                <mat-card fxFlex="60" class="graph">
+                    <ngx-charts-bar-vertical 
+[view]="view"
+[scheme]="colorScheme"
+[results]="single"
+[gradient]="gradient"
+[xAxis]="showXAxis"
+[yAxis]="showYAxis"
+[legend]="showLegend"
+[showXAxisLabel]="showXAxisLabel"
+[showYAxisLabel]="showYAxisLabel"
+[xAxisLabel]="xAxisLabel"
+[yAxisLabel]="yAxisLabel"
+>
+</ngx-charts-bar-vertical>
+                </mat-card>
+                <mat-card fxFlex="40" class="graph">
+                    <mat-card-content>
+                    <div fxLayout="column"> 
+                        
+                        <h1>Details:</h1>
+                   
+                        
+                        <h4>Date of Application: 24/07/2020</h4>
+                        <h4>Institution: JKUAT</h4>
+                        <h4>Reg Number: C078-98-0198</h4>
+                        <h4>ID Number: 34779867</h4>
+                    </div>
+                </mat-card-content>
+                    </mat-card>
+            </div>
+        </section>
+
+      
+
+    </mat-drawer-content>
+
+
+</mat-drawer-container>
+<!-- <footer> footer &copy; 2020</footer> -->

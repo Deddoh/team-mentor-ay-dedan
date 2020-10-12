@@ -1,0 +1,181 @@
+<mat-horizontal-stepper linear #stepper>
+    <mat-step [stepControl]="locationDetails">
+        <mat-card class="mat-elevation-z4">
+            <form [formGroup]="locationDetails">
+                <div class="form-group">
+                    <label>Sub County<span class="required">*</span></label>
+                    <input type="text" class="form-control form-control-lg" formControlName="sub_county">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>Ward<span class="required">*</span></label>
+                    <input type="text" class="form-control form-control-lg" formControlName="ward">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>Village<span class="required">*</span></label>
+                    <input type="text" class="form-control form-control-lg" formControlName="village">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>Year<span class="required">*</span></label>
+                    <input type="month" class="form-control form-control-lg" formControlName="year">
+                </div>
+                <br>
+                <div fxLayout="row" fxLayoutAlign="center">
+                    <button mat-raised-button matStepperNext color="primary">Next</button>
+                </div>
+
+            </form>
+        </mat-card>
+    </mat-step>
+
+    <mat-step [stepControl]="schoolDetails">
+        <mat-card class="mat-elevation-z4">
+            <form [formGroup]="schoolDetails">
+                <div class="form-row" fxLayout="row" fxLayout.sm="column" fxLayout.lt-sm="column">
+                    <div class="form-group col">
+                    <label>Last name<span class="required">*</span></label>
+                    <input type="text" class="form-control form-control-lg" formControlName="last_name">
+                    </div>
+                    <div class="form-group col">
+                        <label>First name<span class="required">*</span></label>
+                        <input type="text" class="form-control form-control-lg" formControlName="first_name">
+                    </div>
+                    <div class="form-group col">
+                        <label>Middle name<span class="required">*</span></label>
+                        <input type="text" class="form-control form-control-lg" formControlName="middle_name">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group" fxLayout="row" fxLayoutGap="20px">
+                    <div><label>Gender:<span class="required">*</span></label></div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" value="male" formControlName="value">Male
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" value="female" formControlName="value">Female
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>Date of Birth<span class="required">*</span></label>
+                    <input type="date" class="form-control form-control-lg" formControlName="dob">
+                </div>
+                <br>
+                <div class="form-group" fxLayout="row" fxLayoutGap="20px">
+                    <div><label>School:<span class="required">*</span></label></div>
+                    <div fxLayout="row" fxLayoutGap="20px" fxLayout.sm="column" fxLayout.lt-sm="column">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" id="seco" type="radio" value="secondary" formControlName="value">Secondary school
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" value="university" id="uni" formControlName="value">University/College/Polytechnic
+                        </label>
+                    </div>
+                    </div>
+                </div>
+                <br>
+                <!-- school categories -->
+                <div id="school_category">
+                <!-- university -->
+                <div id="campus">
+                <div class="form-group">
+                    <label>Institution Name<span class="required">*</span></label>
+                    <input type="text" class="form-control form-control-lg" formControlName="institution">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>Course<span class="required">*</span></label>
+                    <input type="text" class="form-control form-control-lg" formControlName="course">
+                </div>
+                <br>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label>Admission Number<span class="required">*</span></label>
+                        <input type="text" class="form-control form-control-lg" formControlName="university_reg_no">
+                    </div>
+                    <div class="form-group col">
+                        <label>Year<span class="required">*</span></label>
+                        <input type="number" class="form-control form-control-lg" formControlName="university_year">
+                    </div>
+                </div>
+                <br>
+                <div class="form-row" fxLayout.sm="column" fxLayout.lt-sm="column">
+                    <div class="form-group col">
+                        <label>Total Fees<span class="required">*</span></label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupPrependDollar">Ksh</span>
+                          </div>
+                          <input type="number" class="example-right-align form-control form-control-lg" formControlName="total_university_fee">
+                          </div>
+                    </div>
+
+                    <div class="form-group col">
+                        <label>Paid/Able to Raise<span class="required">*</span></label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupPrependDollar">Ksh</span>
+                          </div>
+                          <input type="number" class="example-right-align form-control form-control-lg" formControlName="paid_university_fee">
+                          </div>
+                    </div>
+
+                    <div class="form-group col">
+                        <label>Outstanding Balance<span class="required">*</span></label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupPrependDollar">Ksh</span>
+                          </div>
+                          <input type="number" class="example-right-align form-control form-control-lg" formControlName="outstanding_university_fee">
+                          </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+<!-- end of university form -->
+
+<!-- secondary school -->
+            <div id="secondary">
+                <div class="form-row" fxLayout.sm="column" fxLayout.lt-sm="column">
+                <div class="form-group col">
+                    <label>School Name<span class="required">*</span></label>
+                    <input type="text" class="form-control form-control-lg" formControlName="secondary_school_name">
+                </div>
+                <div class="form-group col">
+                    <label>School Admitted<span class="required">*</span></label>
+                    <select class="custom-select" formControlName="school_type" name="school_type" id="school_type" size="1">
+                        <option value="national">National</option>
+                        <option value="county">County</option>
+                        <option value="sub_county">Sub-County/District</option>
+                        <option value="day_school">Day School</option>
+                    </select>
+                </div>
+                </div>
+                <br>
+
+            </div>
+            <!-- end of secondary school -->
+            </div>
+            <br>
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+                <button mat-raised-button matStepperPrevious color="primary">Previous</button>
+                <button mat-raised-button matStepperNext color="primary">Next</button>
+            </div>
+
+
+
+
+
+            </form>
+        </mat-card>
+    </mat-step>
+</mat-horizontal-stepper>

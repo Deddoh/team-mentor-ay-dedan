@@ -1,0 +1,118 @@
+<header>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <div fxLayout="row" fxLayoutAlign="flex-start center">
+                
+                <button mat-icon-button (click)="toggleSideBar()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                &nbsp;&nbsp;&nbsp;
+                <h1>iBursary</h1>
+            </div>
+            <div fxFlex fxLayout="row" fxLayoutAlign="flex-end center">
+                <ul fxLayout="row" fxLayoutGap="20px">
+               <li> <button mat-button color="primary">Apply</button> </li>
+               <li> <button mat-icon-button><mat-icon aria-hidden="false">home</mat-icon></button></li>
+               <li> <button mat-icon-button><mat-icon>help_outline</mat-icon></button></li>
+               <li>
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon>person_outline</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item [routerLink]="">
+                        <mat-icon>person_outline</mat-icon>
+                        Profile
+                    </button>
+                    <button mat-menu-item [routerLink]="">
+                        <mat-icon>exit_to_app</mat-icon>
+                        Sign out
+                    </button>
+                </mat-menu>
+            </li>
+                </ul>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</header>
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        <mat-nav-list>
+            <h1>MENU</h1>
+            <a mat-list-item routerLinkActive="list-item -active"><mat-icon>home</mat-icon> &nbsp;Dashboard</a>
+            <a mat-list-item routerLinkActive="list-item -active">Applications</a>
+            <a mat-list-item routerLinkActive="list-item -active">Ward</a>
+            <a mat-list-item routerLinkActive="list-item-active">Registered Members</a>
+        </mat-nav-list>
+    </mat-drawer>
+
+        <!-- main dashboard content -->
+        <mat-drawer-content fxLayout="column">
+            <section>
+                <mat-card>
+                <div fxLayout="row" fxLayoutAlign="space-around center">
+                <h1>Admin Dashboard</h1>
+            <h3>Kiambu County Bursary Education Fund</h3>
+            </div>
+        </mat-card>
+            </section>
+            <br>
+            <section id="charts" class="space">
+                <div fxLayout="row" >
+                    <mat-card fxFlex="100">
+                        <div class="row" fxFlex="100" >
+                            <!-- <ngx-charts-advanced-pie-chart -->
+                                <ngx-charts-bar-horizontal
+                            
+                           
+                            [title]="title"
+                             [scheme]="colorScheme"
+                             [results]="single"
+                             [gradient]="true"
+                             [xAxis]="showXAxis"
+                             [yAxis]="showYAxis"
+                             [legend]="showLegend"
+                             [showXAxisLabel]="showXAxisLabel"
+                             [showYAxisLabel]="showYAxisLabel"
+                             [xAxisLabel]="xAxisLabel"
+                             [yAxisLabel]="yAxisLabel"
+                             
+                 
+                          
+                            
+                            
+                             >  
+                            <!-- </ngx-charts-advanced-pie-chart> -->
+                            </ngx-charts-bar-horizontal>
+                        </div>
+                    </mat-card>
+                    <!-- <mat-card fxFlex="33">chart 2</mat-card>-->
+                    <!-- <mat-card fxFlex="50">chart 3</mat-card>  -->
+                </div>
+            </section>
+            <br>
+            <mat-divider></mat-divider>
+            <br>
+            <section class="space">
+                <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+                    <button mat-raised-button  fxFlex="50" id="applications-button" routerLinkActive="active">All Applications</button>
+                    <button mat-raised-button  fxFlex="50" id="reports-button" routerLinkActive="active">Report</button>
+                    <!-- <button mat-raised-button color="primary" fxFlex="33">Disputes</button> -->
+                </div>
+            </section>
+            <br>
+            <mat-divider></mat-divider>
+            <br>
+            <!-- tables -->
+            <section class="space">
+                <div >
+                <div id="applications-table"><app-applications></app-applications></div>
+                <!-- <div>Application status</div> -->
+                <div id="reports-table"><app-reports></app-reports></div>
+            </div>
+    
+            </section>
+          
+    
+        </mat-drawer-content>
+</mat-drawer-container>

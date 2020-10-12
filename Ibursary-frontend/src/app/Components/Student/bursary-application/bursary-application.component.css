@@ -1,0 +1,11 @@
+/* global */
+/* hide the stepper progress bar */
+:host ::ng-deep .mat-horizontal-stepper-header-container {   
+    display: none !important;
+  }
+
+mat-card{
+    top: 20px;
+    margin: 0 auto;
+
+}

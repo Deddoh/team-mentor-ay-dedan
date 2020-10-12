@@ -1,0 +1,28 @@
+:host{
+    height: 100vh;
+ 
+}
+/* .active{
+    background: blue;
+    color: white;
+} */
+
+mat-drawer-container{
+    height: calc(100vh - 100px);
+    
+}
+mat-drawer #lg{
+    width: 250px;
+}
+mat-drawer #sm{
+    width: 125px;
+}
+.space{
+    margin: 0 20px;
+}
+ul li, li{
+    list-style: none;
+}
+#charts mat-card{
+    height: 300px;
+}

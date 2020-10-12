@@ -1,0 +1,53 @@
+<!-- <mat-toolbar color="primary" class="mat-elevation-z3">
+    <mat-toolbar-row>
+       
+        <h1 style="font-size: 20px;">iBursary</h1>
+
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end center">
+            <button mat-button style="color: white;" color="primary">Apply now</button>
+            <ul fxLayoutGap="20px">
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item [routerLink]="">
+                            <mat-icon>person_outline</mat-icon>
+                            Profile
+                        </button>
+                        <button mat-menu-item [routerLink]="">
+                            <mat-icon>exit_to_app</mat-icon>
+                            Sign out
+                        </button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar> -->
+
+<nav class="navbar sticky-top  navbar-expand-lg navbar-custom">
+    <div class="top-centered">
+       <a class="navbar-brand " href="#">
+       iBursary
+     </a>
+   </div>
+   
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-items">
+       <mat-icon>menu</mat-icon>
+     </button>
+   
+   
+     <div class=" navbar-collapse collapse  top-right justify-content-end"  id="menu-items">
+      <!-- [ngClass]="{'show': navbarOpen}" -->
+       <ul class="nav navbar-nav">
+         <li class="nav-item">
+           <a class="nav-link">Apply now</a>
+         </li>
+   
+         <li class="nav-item">
+           <a class="nav-link" >Contact us</a>
+         </li>
+       </ul>
+     </div>
+   </nav>

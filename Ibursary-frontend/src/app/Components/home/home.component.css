@@ -1,0 +1,47 @@
+header #showcase{
+	background: url('/assets/images/par.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	
+	
+}
+
+#tag{
+	
+		display: flex-block;
+		padding-top:10%;
+		/* padding: auto 0; */
+		position: sticky;
+		text-align: center;
+		align-items: center;
+		margin: 0 auto;
+	
+		
+	
+}
+
+#tag h1{
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 40px;
+}
+
+@media only all and (max-width: 760px){
+	#tag h1{
+		font-size: 25px;
+		font-weight: medium;
+	}
+}
+
+footer{
+    height: 60px;
+	/* text-align: center; */
+	color: #fff;
+	background: #292A80;
+	bottom: 0px;
+	font-size:25px;
+	font-weight: bold;
+}
